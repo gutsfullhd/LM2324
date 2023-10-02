@@ -3,14 +3,17 @@
 }
 
 body{
-    display: flex;
     background-color: aliceblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .header{
-    background-color: aliceblue;
-    padding: 25px;
     text-align: center;
-    font-family: ;
+    padding-bottom:  20px;
+    margin-bottom: 20;
+      background-color: darkgrey;
+      border-top-left-radius:10px ;
+      border-top-right-radius:10px;
+      color: white;
+      border: solid 2px whitesmoke;
 }
