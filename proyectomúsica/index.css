@@ -4,7 +4,7 @@
 
 body{
     background-color: aliceblue;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 
 .header{
@@ -16,4 +16,63 @@ body{
       border-top-right-radius:10px;
       color: white;
       border: solid 2px whitesmoke;
+      
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 23px;
+    text-decoration: none;
+  }
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }  
+.row{
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.column1{
+    background-color: black;
+    color: white;
+    width: 950px;
+    height: 1000px;
+    padding: 10px;
+    flex: 75%;
+    margin: 20;
+    border: 2px solid whitesmoke;
+   text-align: justify;
+
+    
+}
+.column2{
+    background-color:crimson;
+    color: white;
+    width: 950px;
+    height: 1000px;
+    padding: 10px;
+    flex: 75%;
+    margin: 20;
+    border: 2px solid whitesmoke;
+    text-align: justify;
+   
+}
+.footer{
+    background-color:darkgoldenrod;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 20;
+    border: 2px solid whitesmoke;
 }
