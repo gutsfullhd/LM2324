@@ -4,14 +4,28 @@
 
 body{
     background-color: aliceblue;
-  
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
-
+img{
+  height: 15%;
+  width: 15%;
+  float: left;
+}
+.discos{
+  justify-content: baseline;
+ margin: 20;
+ width: 25%;
+ height: 35%;
+}
+p::first-letter{
+  font-size: 200%;
+  color:white;
+}
 .header{
     text-align: center;
-    padding-bottom:  20px;
-    margin-bottom: 20;
-      background-color: darkgrey;
+    padding-bottom:  50px;
+      background-color: black;
       border-top-left-radius:10px ;
       border-top-right-radius:10px;
       color: white;
@@ -20,7 +34,7 @@ body{
 }
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-image:linear-gradient(to right,darkgoldenrod,black);
   }
   .topnav a {
     float: left;
@@ -31,8 +45,8 @@ body{
     text-decoration: none;
   }
   .topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    background-color:black;
+    color: gold;
   }  
 .row{
     display: -webkit-flex;
@@ -51,11 +65,12 @@ body{
     margin: 20;
     border: 2px solid whitesmoke;
    text-align: justify;
+   font-size: 23.5px;
 
     
 }
 .column2{
-    background-color:crimson;
+    background-color:darkgoldenrod;
     color: white;
     width: 950px;
     height: 1000px;
@@ -64,13 +79,13 @@ body{
     margin: 20;
     border: 2px solid whitesmoke;
     text-align: justify;
-   
+    font-size: 23.5px;
 }
 .footer{
-    background-color:darkgoldenrod;
+    background-color:black;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    padding: 40px;
+    padding: 90px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin: 20;
