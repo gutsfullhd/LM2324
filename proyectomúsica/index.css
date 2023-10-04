@@ -82,7 +82,9 @@ p::first-letter{
     font-size: 23.5px;
 }
 .column3{
-  background-image: url(imgproyecto/2pac.jfif);
+  background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover; 
   color: white;
   width: 950px;
   height: 1000px;
