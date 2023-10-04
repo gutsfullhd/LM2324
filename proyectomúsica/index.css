@@ -82,10 +82,22 @@ p::first-letter{
     font-size: 23.5px;
 }
 .column3{
-  background-image: url();
-  background-repeat: no-repeat;
+  background-image: url(imgproyecto/2pac.jfif);
   background-size: cover; 
-  color: white;
+  color: darkgoldenrod;
+  width: 950px;
+  height: 1000px;
+  padding: 10px;
+  flex: 75%;
+  margin: 20;
+  border: 2px solid whitesmoke;
+  text-align: justify;
+  font-size: 23.5px;
+}
+.column4{
+  background-image: url(imgproyecto/2pac.jfif);
+  background-size: cover; 
+  color: darkgoldenrod;
   width: 950px;
   height: 1000px;
   padding: 10px;
