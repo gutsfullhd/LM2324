@@ -15,8 +15,8 @@ img{
 .discos{
   justify-content: baseline;
  margin: 20px;
- width: 25%;
- height: 35%;
+ width: 30%;
+ height: 40%;
 }
 p::first-letter{
   font-size: 200%;
