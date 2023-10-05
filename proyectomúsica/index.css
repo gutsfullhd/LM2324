@@ -32,7 +32,8 @@ p::first-letter{
       border-top-right-radius:10px;
       color: white;
       border: solid 2px goldenrod;
-      
+      font-family: Titulo;
+      font-size: 50px;
       
 }
 @font-face {
