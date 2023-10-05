@@ -31,8 +31,13 @@ p::first-letter{
       border-top-left-radius:10px ;
       border-top-right-radius:10px;
       color: white;
-      border: solid 2px whitesmoke;
+      border: solid 2px goldenrod;
       
+      
+}
+@font-face {
+  font-family: Titulo;
+  src: url(sansation_light.woff);
 }
 .topnav {
     overflow: hidden;
@@ -115,9 +120,12 @@ p::first-letter{
     background-color:black;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    color: darkgoldenrod;
     padding: 90px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     margin: 20;
-    border: 2px solid whitesmoke;
+    border: 2px solid gold;
+    font-size: 23.5px;
+  
 }
