@@ -37,7 +37,7 @@ p::first-letter{
 }
 @font-face {
   font-family: Titulo;
-  src: url(sansation_light.woff);
+  src: url(CloisterBlack.ttf);
 }
 .topnav {
     overflow: hidden;
