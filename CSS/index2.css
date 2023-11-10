@@ -7,7 +7,7 @@
 p{
     text-indent: 10px;
     text-transform: capitalize;
- 
+   text-decoration: double;
 }
 .columna1{
     background-color: aqua;
