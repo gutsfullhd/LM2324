@@ -6,6 +6,8 @@
 }
 p{
     text-indent: 10px;
+    text-transform: capitalize;
+    text-decoration: underline;
 }
 .columna1{
     background-color: aqua;
