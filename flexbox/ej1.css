@@ -1,0 +1,15 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+.header{
+    background-color:#b28306;
+    border-radius: 20px;
+    width: 75%;
+    padding: 50px;
+    text-align: center;
+}
+body{
+    background-image:url(imagesf/bg.jpg);
+    background-repeat: no-repeat;
+}
