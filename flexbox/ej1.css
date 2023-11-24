@@ -47,7 +47,7 @@ body{
   }
   .topnav a:hover {
     background-color:black;
-    color: gold;
+    color: white;
   }  
   .article{
     box-sizing: border-box;
@@ -101,6 +101,7 @@ body{
     }
     .topnav{
       order: 4;
+      padding: 2px;
    
     }
     .topnav a{
