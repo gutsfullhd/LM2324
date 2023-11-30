@@ -12,9 +12,7 @@ body{
     height: 84vh;
     margin: auto;
     padding: 20px;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto auto ;
-    grid: 10% / 20% / auto / auto / 10%;
+    grid-template-areas: 10% / 20% / auto / auto / 10%;
 
 }
 div{
@@ -23,6 +21,6 @@ text-align: center;
 background-color: lightgray;
 }
 .item1{
- grid-column-start: 1;
- grid-column-end: 2;
+grid-area: 10%;
+ 
 }
