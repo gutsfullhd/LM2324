@@ -1,0 +1,29 @@
+
+body{
+    background-color: #f6dccf;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.texto{
+    box-sizing: border-box;
+}
+ul{
+    float: right;
+    margin-top: -12px;
+}
+.menu{
+    background-color: #95a5a6;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 4px;
+    border-radius: 4px;
+    height: 50px;
+    line-height: 50px;
+    width: auto;
+    list-style-type: none;
+    text-align: center;
+   border:  1px solid #d4d4d4;
+    
+    
+}
