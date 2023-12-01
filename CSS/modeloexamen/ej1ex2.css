@@ -85,3 +85,11 @@ p::first-letter{
     text-decoration: none;
     color:black;
    }
+   @media (max-width:768px){
+    .padre{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    
+   }
