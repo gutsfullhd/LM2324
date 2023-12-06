@@ -8,11 +8,15 @@ body{
     box-sizing: border-box;
     background-color: lightgray;
     border: dashed black 2px;
-    width: 80%;
-    height: 84vh;
     margin: auto;
     padding: 20px;
-    grid-template-areas: 10% / 20% / auto / auto / 10%;
+    height: 84vh;
+    width: 80%;
+    grid-template-columns: auto auto ;
+    grid-template-areas: "item1 item1 item1 item1"
+                         "item2 item2 item2 item2"
+                         "item3 item3  item4 item4"
+                         "item5 item5 item5 item5";
 
 }
 div{
@@ -21,6 +25,28 @@ text-align: center;
 background-color: lightgray;
 }
 .item1{
-grid-area: 10%;
- 
+    grid-column-start: item1;
+    grid-column-end: item1;
+    height: 10%;
+}
+.item2{
+    grid-column-start: item2;
+    grid-column-end: item2;
+    height: 20%;
+}
+.item3{
+    grid-column-start: item3;
+    grid-column-end: item3;
+    height: auto;
+}
+
+.item4{
+    grid-column-start: item4;
+    grid-column-end: item4;
+    height: auto;
+}
+.item5{
+    grid-column-start: item5;
+    grid-column-end: item5;
+    height: 10%;
 }
