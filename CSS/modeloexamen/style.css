@@ -81,3 +81,7 @@ img{
     margin: 20;
     
 }
+p::first-letter{
+    font-size: 200%;
+    color: darkgray;
+}
