@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+    box-sizing: border-box;
+    font-family: 'Open Sans',  Helvetica, sans-serif ;
+    background-color:  #970043;
+    display: flex;
+    flex-direction: column;
+}
+
+.padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+
+}
+.cabecera{
+    width: 100%;
+    background-color: #ffd100;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 1px;
+    text-align: center;
+
+}
+.izquierda{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    box-sizing: border-box;
+    width: 20%;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+.img{
+    width: 100%;
+}
+.imgcentro{
+    width: 75%;
+    border-radius: 10px;
+
+  
+}
+.texto{
+    box-sizing: border-box;
+    width: 60%;
+    background-color: #f2f2f2;
+    overflow: auto;
+    padding: 5px;
+    text-align: center;
+
+    
+  
+}
+p{
+    text-align: left;
+}
+.mas{
+    text-align: left;
+}
+.atexto{
+    color: #ffd100;
+    text-decoration: none;
+    cursor: wait;
+}
+.texto:hover{
+background-color: #970043;
+color: #f2f2f2;
+}
+p::first-letter{
+    font-size: 150%;
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+  
+.derecha{
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    box-sizing: border-box;
+    width: 20%;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin:  0 auto;
+}
+.footer{
+    box-sizing: border-box;
+    background-color: #ffd100;
+    width: 100%;
+    padding: 1px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+}
+.pfooter{
+    text-align: center;
+}
+.mail{
+    text-decoration: none;
+    color:black;
+   }
+  
+    
+   @media (max-width:768px){
+    .padre{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: auto;
+    }
+    .izquierda{
+        width: 100%;
+    }
+    .derecha{
+        width: 100%;
+    }
+    .texto{
+        width: 100%;
+    }
+
+}

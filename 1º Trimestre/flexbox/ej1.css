@@ -1,0 +1,117 @@
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 75%;
+    margin: auto;
+    font-family: 'Trebuchet MS',  Geneva, sans-serif;
+}
+.header{
+    background-color:#b28306;
+    border-radius: 20px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border: black solid 1px;
+}
+body{
+    background-image:url(imagesf/bg.jpg) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position-x: center;
+    background-attachment: fixed;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #ebcd7c;
+    width: 100%;
+    padding: 5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .topnav a {
+    color:#b28306;
+    text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: auto;
+    border-radius: 20px;
+    text-decoration: none;
+    background-color: #4c3803;
+  }
+  .topnav a:hover {
+    background-color:black;
+    color: white;
+  }  
+  .article{
+    box-sizing: border-box;
+    width: 75%;
+ 
+  }
+  p::first-letter{
+
+  text-transform: uppercase;
+  font-weight: bold;
+  }
+
+  .aside{
+    box-sizing: border-box;
+    width: 25%;
+    background-color: #b28306;
+    border-radius: 20px;
+    
+
+  }
+  .footer{
+    box-sizing: border-box;
+    width: 100%;
+    border-top: black solid 6px;
+  
+    
+  }
+   .mail{
+    text-decoration: none;
+    color:grey;
+   }
+
+   @media (max-width:600px) {
+
+    .main{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    
+    .header{
+      order: 1;
+    }
+    .article{
+      order: 2;
+    }
+    .aside{
+      order: 3;
+      width: 100%;
+    }
+    .topnav{
+      order: 4;
+      padding: 2px;
+   
+    }
+    .topnav a{
+      padding: 5px;
+      
+   
+    }
+    .footer{
+      order: 5;
+      border-top: 0px;
+    }
+    
+   }

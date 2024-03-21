@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin espacios y en mayusculas</title>
+</head>
+<body>
+    <input type="text" name="" id="cadena">
+    <button onclick="limpia()">Limpiar</button>
+    <p id="resultado"></p>
+    <script>
+        let cadena = document.getElementById("cadena").value;
+        let cadenaSinEsapacios = cadena.replace(/ /g,"");
+        let cadenaLimpia = cadenaSinEspacios.toUpperCase();
+        document.getElementById("resultado").innerHTML = cadenaLimpia;
+    </script>
+</body>
+</html>

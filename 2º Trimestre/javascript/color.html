@@ -1,0 +1,71 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-size: 16px;
+      background-color: #fff;
+    }
+  </style>
+  <title>Configuración Personalizable</title>
+</head>
+<body>
+  <h1>Configuración Personalizable</h1>
+  <form id="configForm">
+    <label for="fontSize">Tamaño de Fuente: </label>
+    <input type="range" id="fontSize" min="12" max="24">
+    <br>
+    <label for="bgColor">Color de Fondo: </label>
+    <input type="color" id="bgColor">
+    <br>
+    <button type="submit">Guardar</button>
+    <button type="button" id="resetBtn">Restablecer</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const configForm = document.getElementById('configForm');
+      const fontSizeInput = document.getElementById('fontSize');
+      const bgColorInput = document.getElementById('bgColor');
+      const resetBtn = document.getElementById('resetBtn');
+
+      
+      if (localStorage.getItem('fontSize')) {
+        fontSizeInput.value = localStorage.getItem('fontSize');
+        document.body.style.fontSize = `${fontSizeInput.value}px`;
+      }
+
+      if (localStorage.getItem('bgColor')) {
+        bgColorInput.value = localStorage.getItem('bgColor');
+        document.body.style.backgroundColor = bgColorInput.value;
+      }
+
+      
+      configForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        localStorage.setItem('fontSize', fontSizeInput.value);
+        localStorage.setItem('bgColor', bgColorInput.value);
+        document.body.style.fontSize = `${fontSizeInput.value}px`;
+        document.body.style.backgroundColor = bgColorInput.value;
+      });
+
+      
+      resetBtn.addEventListener('click', () => {
+        localStorage.removeItem('fontSize');
+        localStorage.removeItem('bgColor');
+        fontSizeInput.value = 16;
+        bgColorInput.value = '#fff';
+        document.body.style.fontSize = '16px';
+        document.body.style.backgroundColor = '#fff';
+      });
+    });
+  </script>
+</body>
+</html>
+
+

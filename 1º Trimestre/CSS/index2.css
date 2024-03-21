@@ -1,0 +1,62 @@
+.header{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+p{
+    text-indent: 10px;
+    text-transform: capitalize;
+   text-decoration: double;
+}
+.columna1{
+    background-color: aqua;
+    padding: 100px;
+    width: 125px;
+    height: 550px;
+    font-size: 15px;
+    text-align: center;
+    
+    
+}
+a:hover{
+    cursor: wait;
+}
+
+.columna2{
+    background-color: crimson;
+    padding: 100px;
+    width: 400px;
+    height: 550px;
+    left: 325px;
+    top: 263px;
+    position: absolute;
+    overflow: scroll;
+    z-index: 1;
+   
+}
+.image{
+    float: left;
+    margin: 10px;
+    border: 2px inset yellow;
+   
+}
+.columna3{
+    background-color: aqua;
+    padding: 100px;
+    width: 125px;
+    height: 550px;
+    position: absolute;
+    top: 263px;
+    left: 920px;
+    background-image: url(imagescss/bannervertica.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}

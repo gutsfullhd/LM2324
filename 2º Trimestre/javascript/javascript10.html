@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de variable global</title>
+</head>
+
+<body>
+    <h1>Prueba de variable golbal</h1>
+    <button onclick="sumar()">Incrementa</button>
+    <button onclick="restar()">Decrementa</button>
+    <p id="demo"></p>
+    <script>
+        var numero = 1;
+        function sumar() {
+            numero += 1;
+            document.getElementById("demo").innerHTML = numero;
+        }
+        function restar() {
+            numero -= 1;
+            document.getElementById("demo").innerHTML = numero;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+img{
+  height: 15%;
+  width: 15%;
+  float: left;
+  margin: 3.5%;
+}
+.discos{
+  justify-content: baseline;
+ margin: 20px;
+ width: 30%;
+ height: 40%;
+}
+
+p::first-letter{
+  font-size: 200%;
+  color:darkgoldenrod;
+}
+.header{
+    text-align: center;
+    padding-bottom:  50px;
+      background-color: black;
+      border-top-left-radius:10px ;
+      border-top-right-radius:10px;
+      color: white;
+      border: solid 2px goldenrod;
+      font-family: Titulo;
+      font-size: 50px;
+      
+}
+@font-face {
+  font-family: Titulo;
+  src: url(CloisterBlack.ttf);
+}
+.topnav {
+    overflow: hidden;
+    background-image:linear-gradient(to right,darkgoldenrod,black);
+  }
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 25px 23px;
+    text-decoration: none;
+  }
+  .topnav a:hover {
+    background-color:black;
+    color: gold;
+  }  
+.row{
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.column1{
+  background-image: url(imgproyecto/black.jpg);
+  background-size: cover; 
+    color: darkgoldenrod;
+    width: 950px;
+    height: 1000px;
+    padding: 10px;
+    flex: 75%;
+    margin: 20;
+    border: 2px solid gold;
+   text-align: justify;
+   font-size: 23.5px;
+
+    
+}
+.column2{
+  background-image: url(imgproyecto/black.jpg);
+  background-size: cover; 
+    color: darkgoldenrod;
+    width: 950px;
+    height: 1000px;
+    padding: 10px;
+    flex: 75%;
+    margin: 20;
+    border: 2px solid gold;
+    text-align: justify;
+    font-size: 23.5px;
+}
+.column3{
+  background-image: url(imgproyecto/2pac.jfif);
+  background-size: cover; 
+  color: darkgoldenrod;
+  width: 950px;
+  height: 1000px;
+  padding: 10px;
+  flex: 75%;
+  margin: 20;
+  border: 2px solid gold;
+  text-align: justify;
+  font-size: 23.5px;
+}
+.column4{
+  background-image: url(imgproyecto/black.jpg);
+  background-size: cover; 
+  color: darkgoldenrod;
+  width: 950px;
+  height: 1000px;
+  padding: 10px;
+  flex: 75%;
+  border: 2px solid gold;
+  text-align: justify;
+  font-size: 23.5px;
+}
+.footer{
+    background-color:black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: darkgoldenrod;
+    padding: 90px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin: 20;
+    border: 2px solid gold;
+    font-size: 23.5px;
+  
+}

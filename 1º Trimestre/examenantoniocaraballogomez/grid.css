@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #eee;
+    color: #434344;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    width: 100%;
+
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@100;300&display=swap');
+
+.grid-container{
+ display: grid;
+ width: 850px;
+ grid-template-columns: 1fr  3fr;
+ padding-left: 60px;
+ padding-right: 60px;
+ column-gap: 50px;
+ row-gap: 50px;
+ background-color: #fff;
+}
+button{
+    width: 100%;
+    grid-column-start: 3;
+    background-color: #0d6427;
+    border-radius: 1.25em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #908d8d;
+    cursor: pointer;
+
+}
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #908d8d;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: dashed 5px #0d6427;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    cursor: pointer;
+    text-transform: uppercase;
+
+}
+.nav{
+grid-column-start: 1;
+grid-column-end: 2;
+margin-right: 15px;
+display: block;
+border-top: solid 5px #0d6427 ;
+background-color: #f9f9f9;
+padding: 20px;
+
+
+}
+ul{
+    list-style: none;
+    margin-top: 1em;
+    font-size: .75em;
+
+}
+.hnav{
+    margin: 0.5;
+}
+.nav a{
+    
+    color: #434344;
+    text-decoration: none;
+    padding: .25em;
+    cursor: pointer;
+
+}
+.section{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1em;
+
+}
+.hsection{
+    font-size: 32px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #ada070;
+
+}
+.footer{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    background-color: #0d6427;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+}
+.footer a{
+    text-decoration: none;
+    color: white;
+    
+    
+    
+}
+img{
+    border-radius: 30px;
+}
+@media only screen and (max-width: 760px){
+    .grid-container{
+        display: grid;
+        grid-template-areas: 'header header header'
+                             'section section section'
+                             'nav nav nav'
+                             'footer footer footer';
+    }
+
+}

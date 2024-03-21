@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheros</title>
+</head>
+<body>
+    <p>Añadir elementos a una lista con document.CreateElement y appendChild</p>
+    <ul id="lista">
+    </ul>
+ 
+    <script>
+
+
+    function Anadirelemento(){ 
+    var lista = document.getElementById("lista")
+   for (i=1;i<20;i++){
+   var elemento = document.createElement("li");
+   elemento.innerHTML = "<a href='ficheros/fichero"+i+".pdf'target=_blank> Fichero" + (lista.children.length + 1)+"<img width='25' src='download.png'></a>";
+    lista.appendChild(elemento);
+   }
+    }
+    window.onload = Anadirelemento(); 
+
+</script>
+</body>
+</html>

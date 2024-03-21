@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion de campos</title>
+    <script src="validarCampos.js"></script>
+
+    <style>
+        #error{
+            color: red;
+        }
+
+        #error1{
+            color: red;
+        }
+
+        #error2{
+            color: red;
+        }
+
+        #error3{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Validacion de campos</h1>
+
+
+    <p><input type="text" id="nombre" placeholder="Introduzca  nombre" required><p id="error"></p>
+    <p><input type="text" id="apellidos" placeholder="Introduzca  apelllido" required><p id="error1"></p>
+    <p><input type="email" id="email" placeholder="Introduzca  email" required><p id="error2"></p>
+    <p><input type="text" id="password" placeholder="Introduzca  contraseña" required><p id="error3"></p>
+   
+    <button onclick="validacionCampos()">Enviar</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario 1</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Rellenar</legend>
+            <p><input type="radio" name="idioma" value="idiomaingles">
+            <label>Inglés</label></p>
+            <p><input type="radio"  name="idioma" value="idiomaaleman">
+            <label>Alemán </label></p>
+            <p><input type="radio"  name="idioma" value="idiomafrances">
+            <label>Francés</label></p>
+            <p><select name="conector" style="background-color: grey;">
+                <option value="USB">USB</option>
+                <option value="paralelo">Paralelo</option>
+                <option value="PS2">PS2</option>
+              </select>
+            </p>
+             <p><label>Nombre:</label>
+              <input type="text" name="nombre"></p>
+             <p><label>Apellidos:</label>
+              <input type="text" name="apellidos"></p>
+
+        </fieldset>
+        <fieldset>
+            <legend>Indique sus preferencias</legend>
+           <p> <select multiple name="sexo">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+              </select>
+            </p>
+            <p><input type="checkbox" name="sexo" value="sexomujer">
+              <label>Mujer</label> </p>
+              <p> <input type="checkbox" name="sexo" value="sexohombre">
+              <label>Hombre</label></p>
+               <p><label>Elija una fecha</label>
+                 <input type="date">
+            </p>
+        </fieldset>
+    </form>
+    
+</body>
+</html>

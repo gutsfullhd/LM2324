@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario avanzado</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+        <p><b>FORMULARIO DE PAGO</b>(Los campos obligatorios se han marcado con *)</p>
+        <fieldset>
+
+            <legend>Información de contacto</legend>
+            <fieldset>
+                <legend>Profesión</legend>
+                <p><input type="radio" name="profesión" value="profesor/a">
+                    <label>Profesor/a</label></p>
+                    <p><input type="radio"  name="profesión" value="estudiante">
+                    <label>EStudiante </label></p>
+                    <p><input type="radio"  name="profesión" value="otro">
+                    <label>Otro</label></p>
+            </fieldset>
+            <fieldset>
+                <legend>Tratamiento</legend>
+                <p><input type="radio" name="tratamiento" value="sr/sra">
+                    <label>Sr/Sra</label></p>
+                    <p><input type="radio"  name="tratamiento" value="dr/dra">
+                    <label>Dr/Dra </label></p>
+                    <p><input type="radio"  name="tratamiento" value="otro">
+                    <label>Otro</label></p>
+            </fieldset>
+            <p><label>Nombre:*</label>
+                <input type="text" name="Nombre" style="width: 99%;" required></p>
+            <p><label>Correo:*</label>
+                <input type="email" name="email" style="width: 99%;" required></p>
+                <p><label>Número de telefono:*</label>
+                    <input type="number" name="tlfno" style="width: 99%;" required></p>
+                    <p><label>Contraseña:*</label>
+                        <input type="password" name="password" style="width: 99%;" required></p>
+        </fieldset>
+        <fieldset>
+            <legend>Información de pago</legend>
+            <p><label>Tipo de tarjeta
+                <select name="tarjeta" style="width: 10%;">
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="American_Express">American Express</option>
+              </select></label></p>
+              <p><label>Número de tarjeta:*</label>
+                <input type="number" name="tarjeta" style="width: 99%;" required></p>
+                <p><label>Fecha de caducidad</label>
+                    <input type="date" style="width: 99%;" required></p>
+                    <p><label>Cuenta de Paypal:*</label>
+                        <input type="text" name="paypal" style="width: 99%;" required></p>
+                        <p><label>Metodo preferido de pago:
+                            <select name="pago" style="width: 12%;">
+                            <option value="Tarjeta de crédito">Tarjeta de crédito</option>
+                            <option value="Paypal">Paypal</option>
+                        </select></label></p>
+        </fieldset>
+        <p><button type="submit" style="background-color: black; color: white;"><h1>Validar pago</h1> </button></p>
+    </fieldset>
+    </form>
+</body>
+</html>
