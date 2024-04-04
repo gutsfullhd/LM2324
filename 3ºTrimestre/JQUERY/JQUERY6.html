@@ -5,7 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 6 </title>
     <script src="jquery.js"></script>
+<script>
+    $(document).ready(function (){
+    $("#encabezado").html(
+        $("h1").length
+    );
+    $("#parrafo").html(
+        $("p").length
+    );
+    $("#imagenes").html(
+        $("img").length
+    );
+    $("#enlace").html(
+        $("a").length
+    );
 
+    
+
+    })
+</script>
 </head>
 <body>
     <h1>Encabezado 1</h1>
@@ -14,6 +32,18 @@
     <p>Lorem ipsum dolor sit amet,<a href="htpp://" target="_blank" rel="nooper noreferrer"> consectetur adipiscing elit</a>. Etiam ultricies ex purus. Curabitur lobortis lacus id orci cursus, non volutpat eros eleifend. Donec blandit eu leo in sollicitudin. Aliquam ornare feugiat malesuada. Duis mauris arcu, posuere sed luctus ut, mattis at lorem. Aenean pulvinar velit urna, id efficitur risus ornare eget. Aliquam molestie eleifend ullamcorper. Sed facilisis id tellus ut finibus.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies ex purus. Curabitur lobortis lacus id orci cursus, non volutpat eros eleifend. Donec blandit eu leo in sollicitudin. Aliquam ornare feugiat malesuada. Duis mauris arcu, posuere sed luctus ut, mattis at lorem. Aenean pulvinar velit urna, id efficitur risus ornare eget. Aliquam molestie eleifend ullamcorper. Sed facilisis id tellus ut finibus.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies ex purus. Curabitur lobortis lacus id orci cursus, non volutpat eros eleifend. Donec blandit eu leo in sollicitudin. Aliquam ornare feugiat malesuada. Duis mauris arcu, posuere sed luctus ut, mattis at lorem. Aenean pulvinar velit urna, id efficitur risus ornare eget. Aliquam molestie eleifend ullamcorper. Sed facilisis id tellus ut finibus.</p>
+    <table>
+        <th>Encabezados</th>
+        <th>Parrafos</th>
+        <th>Enlaces</th>
+        <th>Imagenes</th>
+<tr>
+    <td id="encabezado"></td>
+    <td id="parrafo"></td>
+    <td id="imagenes"></td>
+    <td id="enlace"></td>
+</tr>
+    </table>
 
 </body>
 </html>
