@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade in</title>
+    <script src="jquery.js"></script>
+    <style>
+        #roja{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+        #purple{
+            background-color: purple;
+            height: 200px;
+            width: 200px;
+        }
+        #blue{
+            background-color: cyan;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#aparecer").click(function(){
+                $("#roja").fadeIn();
+                $("#purple").fadeIn();
+                $("#blue").fadeIn();
+            })
+            $("#desaparecer").click(function(){
+                $("#roja").fadeOut();
+                $("#purple").fadeOut();
+                $("#blue").fadeOut();
+            })
+            $("#alternar").click(function(){
+                $("#roja").fadeToggle();
+                $("#purple").fadeToggle();
+                $("#blue").fadeToggle();
+            })
+
+        });
+    </script>
+</head>
+<body>
+    <div id="roja"></div>
+    <div id="purple"></div>
+    <div id="blue"></div>
+    <button id="aparecer">APARECER</button>
+    <button id="desaparecer">DESAPARECER</button>
+    <button id="alternar">ALTERNAR</button>
+</body>
+</html>
