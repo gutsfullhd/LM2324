@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <script src="jquery.js"></script>
+    <style>
+        input{
+            margin: 5px 5px
+        }
+        span{
+            color: red;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function (){
+            $("button").click(function(){
+                let patronemail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+                let nombre = $("#nombre").val();
+                let apellidos = $("#apellidos").val();
+                let email = $("#correo").val();
+
+                if(nombre==""){
+                    $("#errorNombre").text("Rellenar el campo nombre");
+                }
+                else{
+                    $("#errorNombre").text("Rellenar el campo nombre");
+                }
+                if(apellidos==""){
+                    $("#errorapellidos").text("Rellenar el campo Apellidos");
+                }
+                else{
+                     $("#errorapellidos").text("Rellenar el campo Apellidos");
+            }
+            if (email==""){
+                $("#errorcorreo").text("Rellenar el campo correo");
+
+            }
+            else{
+                if(!patronemail.test(email)){
+                    $("#errorcorreo").text("Rellenar el campo correo")
+
+                }
+                else{
+                    $("#errorcorreo").text("");
+                }
+              
+            }
+        })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Nombre" id="nombre">
+    <span id="errorNombre"></span><br>
+
+    <input type="text" placeholder="Apellidos" id="apellidos">
+    <span id="errorapellidos"></span><br>
+    
+    <input type="email"  name="" placeholder="correo" id="correo">
+    <span id="errorcorreo"></span><br>
+    
+    
+    <input type="date"  name="" placeholder="" id="fnac"><br>
+    
+    <input type="text"   name="" placeholder="DNI123456789X" id="dni"><br>
+    
+
+    <input type="text" name="" placeholder="Password1" id="nombre"><br>
+    
+    <input type="text" name="" placeholder="Password2" id="nombre"><br>
+
+    <input type="checkbox" name=""  id="privacidad"><br><label for="">Acepta las condiciones de privacidad</label><br>
+
+
+    <button>REGISTRARSE</button><br>
+
+
+</body>
+</html>
