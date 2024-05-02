@@ -104,33 +104,36 @@
             });
         });
 
-        $('#btn-varios').click(function () {
-            $.ajax({
-                type: "GET",
-                url: "https://randomuser.me/api/?nat=es/?results=5",
-                contentType: "application/json",
-                success: function (data){
-                    
-                    for (let i = 0; i < 5; i++) {
+        $("#btn-varios").click(function () {
+                $.ajax({
+                    url: 'https://randomuser.me/api/?nat=es&results=5',
+                    dataType: 'json',
+                    success: function (data) {
                         console.log(data);
-                        let nombre = data.results[i].name.first;
-                        let apellido = data.results[i].name.last;
-                        let apodo = data.results[i].login.username;
-                        let correo = data.results[i].email;
-                        let ciudad = data.results[i].location.city;
-                        $(".circle").attr("src", 'multiple.png');
-                        $('.fullname').html(nombre+' '+apellido);
-                        $('.username').html(apodo);
-                        $('.email').html(correo);
-                        $('.city').html(ciudad);
+                        let total = data.results.length;
+                        console.log("Total :" + total);
+                        // Vaciamos de una ejecución anterior
+                        $(".circle").empty();
+                        $(".fullname").empty();
+                        $(".username").empty();
+                        $(".email").empty();
+                        $(".city").empty();
+                        for (let i = 0; i < total; i++) {
+                            let nombre_completo = data.results[i].name.first + ' ' + data.results[i].name.last + "<br>";
+                            let usuario = data.results[i].login.username;
+                            let email = data.results[i].email;
+                            let ciudad = data.results[i].location.city;
+                            $(".circle").attr("src", "multiple.png");
+                            $(".fullname").append(nombre_completo);
+                            $(".username").append(usuario + "<br>");
+                            $(".email").append(email + "<br>");
+                            $(".city").append(ciudad + "<br>");
+                        }
+
                     }
-                },
-                error: function (){
-                    alert('ERROR');
-                }
+                });
             });
         });
-    });    
     </script>
 </body>
 </html>
