@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialogo con animación</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+  <script>
+    $( function() {
+      $( "#texto" ).dialog({
+        autoOpen: false,
+        show: {
+          effect: "blind",
+          duration: 1000
+        },
+        hide: {
+          effect: "explode",
+          duration: 1000
+        }
+      });
+   
+      $( "#abrir" ).on( "click", function() {
+        $( "#texto" ).dialog( "open" );
+      });
+    } );
+    </script>
+</head>
+<body>
+    <h1>Ejemplo de dialogo</h1>
+    <div id="texto">
+    <p>Esto esta oculto hasta que le demos al boton para que nos muestre el dialogo</p>
+    </div>
+    <button id="abrir">Abrir</button>
+</body>
+</html>
