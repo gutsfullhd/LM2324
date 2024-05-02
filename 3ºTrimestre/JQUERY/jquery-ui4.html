@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jQuery UI Dialog - Modal confirmation</title>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+<script>
+$( function() {
+  $( "#dialog-confirm" ).dialog({
+    resizable: false,
+    height: "auto",
+    width: 400,
+    modal: true,
+    buttons: {
+      "Aceptar": function() {
+        $("h1").hide();
+        $("p").hide();
+        $( this ).dialog( "close" );
+      },
+      Cancel: function() {
+        $( this ).dialog( "close" );
+      }
+    }
+  });
+} );
+</script>
+</head>
+<body>
+<h1>Ejemplo 1</h1>
+<div id="dialog-confirm" title="Su ordenador esta infectado de virus">
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Su ordenador esta infectado con un troyano </p>
+</div>
+
+<p>Sed vel diam id libero <a href="https://example.com">rutrum convallis</a>. Donec aliquet leo vel magna. Phasellus rhoncus faucibus ante. Etiam bibendum, enim faucibus aliquet rhoncus, arcu felis ultricies neque, sit amet auctor elit eros a lectus.</p>
+
+
+
+
+</body></html>
