@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mala cuenta</title>
+</head>
+<body>
+    <h1>La mala cuenta</h1>
+    <script>
+        //mala cuenta
+        // demuestra el fallo potencial
+
+        var comida;
+        //obtener el importe de comida del usuario
+        comida = prompt("Cuánto cuesta la comida?");
+        var iva = comida * 0.10;
+        var total= comida + iva;
+        alert ("La comida son €: " + comida);
+        alert ("El IVA son €" + iva);
+        alert ("El importe total son: €" + total);
+    </script>
+</body>
+</html>
