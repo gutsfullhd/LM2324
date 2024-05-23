@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta y baja temperatura</title>
+
+</head>
+<body>
+    <h1>Alta o baja</h1>
+    <p id="resultado"></p>
+    <p id="frio"></p>
+    <p id="calor"></p>
+    <button onclick="temp()">Dale</button>
+    <script>
+        //Alta o baja
+        // Demustra la estructura if / else
+        function temp(){
+        var temp = 0;
+        var tempperfecta = 25;
+        temp = Math.floor(Math.random() * 40) + 1;
+        document.getElementById("resultado").innerHTML = "Hace " + temp + " grados fuera.";
+        if (temp < tempperfecta){
+        alert("Coge un jersey!!")
+        }
+        else
+        {
+        alert("Coge una camiseta!!") 
+        }
+    };
+    </script>
+</body>
+</html>

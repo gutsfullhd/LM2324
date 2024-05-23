@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baja temperaturas</title>
+</head>
+<body>
+    <h1>TEMPURATURA</h1>
+    <p id="resultado"></p>
+    <p id="frio"></p>
+    <button onclick="temp()">Dale para ver la temperatura</button>
+    <script>
+        //Baja temperatura
+        //Demuestra la sentencia if
+        function temp(){
+        var temp = 0;
+        var tempperfecta = 18;
+        temp = Math.floor(Math.random()*40)+1;
+        document.getElementById("resultado").innerHTML = "Hace " + temp + " grados fuera.";
+        if (temp < tempperfecta){
+            document.getElementById("frio").innerHTML = "Cogete una rebeca que hace corriente";
+        }
+    
+    };
+        //end if
+    </script>
+</body>
+</html>

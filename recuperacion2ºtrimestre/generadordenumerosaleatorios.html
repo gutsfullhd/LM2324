@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar numeros aleatorios</title>
+</head>
+<body>
+    <h1>Generar números aleatorios</h1>
+    <p id="resultado"></p>
+    <button onclick="generar()">!PULSA¡</button>
+    <script>
+        //Generador de numeros aleatorios
+        //Demuestra el uso del generador de numeros aleatorios
+        function generar(){
+            var numero;
+            numero = Math.random();
+            document.getElementById("resultado").innerHTML = numero;
+        }
+    </script>
+</body>
+</html>
