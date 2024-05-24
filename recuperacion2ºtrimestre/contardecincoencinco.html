@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saltando valores</title>
+</head>
+<body>
+    <h1>Contar de cinco en cinco</h1>
+    <p id="resultado"></p>
+    <button onclick="contar()">ACCION</button>
+    <script>
+        function contar(){
+            var i = 0;
+            document.getElementById("resultado").innerHTML = "";
+            for (i=5; i<=100; i += 5){
+                alert(i);
+            }
+        };
+    </script>
+</body>
+</html>
