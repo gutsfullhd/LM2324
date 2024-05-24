@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oraculo</title>
+</head>
+
+<body>
+    <h1>El oraculo de Delfos</h1>
+    <p>Tira el dado para ver tu suerte</p>
+    <p id="resultado"></p>
+    <button onclick="lanzar()">Lanzame para saber tu suerte</button>
+    <script>
+        function lanzar() {
+            var lanzamiento = 0;
+            var futuro = "";
+            lanzamiento = Math.floor(Math.random() * 5) + 1;
+            document.getElementById("resultado").innerHTML = "";
+            switch (lanzamiento) {
+                case 1:
+                    futuro = "El futuro pinta muy negro";
+                    break;
+                case 2:
+                    futuro = "El futuro pinta mal";
+                    break;
+                case 3:
+                    futuro = "El futuro ni pinta bien ni pinta mal ";
+                    break;
+                case 4:
+                    futuro = "El futuro pinta con suerte";
+                    break;
+                case 5:
+                    futuro = "El  futuro pinta con suerte abundante";
+                    break;
+                default: "Error!";
+
+            }// end switch
+            document.getElementById("resultado").innerHTML = futuro;
+
+        }
+    </script>
+</body>
+
+</html>

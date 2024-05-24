@@ -18,16 +18,19 @@
         function temp(){
         var temp = 0;
         var tempperfecta = 25;
+        document.getElementById("frio").innerHTML = "";
+        document.getElementById("calor").innerHTML = "";
         temp = Math.floor(Math.random() * 40) + 1;
         document.getElementById("resultado").innerHTML = "Hace " + temp + " grados fuera.";
         if (temp < tempperfecta){
-        alert("Coge un jersey!!")
+        document.getElementById("frio").innerHTML = "¡Ponte jersey!";
         }
         else
         {
-        alert("Coge una camiseta!!") 
-        }
+        document.getElementById("calor").innerHTML = "¡Ponte camiseta!";
+    }
     };
     </script>
+
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dado aletorio</title>
+</head>
+
+<body>
+    <h1>Dado aleatorio</h1>
+    <p id="resultado"></p>
+    <p id="resultado2"></p>
+    <p id="resultado3"></p>
+    <p id="resultado4"></p>
+    <p id="resultado5"></p>
+    <button onclick="lanzar()">LANZALO!!!</button>
+    <script>
+        function lanzar() {
+            var lanzamiento = 0;
+            var dado = "";
+            lanzamiento = Math.floor(Math.random() * 6) + 1;
+            switch (lanzamiento) {
+                case 1:
+                    dado =  "|-------|\n";
+                    dado += "|       |\n";
+                    dado += "|   *   |\n";
+                    dado += "|       |\n";
+                    dado += "|-------|\n";
+                    break;
+                // \n es un salto de linea
+                case 2:
+                    dado =  "|-------|\n";
+                    dado += "|   *   |\n";
+                    dado += "|       |\n";
+                    dado += "|   *   |\n";
+                    dado += "|-------|\n";
+                    break;
+                case 3:
+                    dado =  "|-------|\n";
+                    dado += "|   *   |\n";
+                    dado += "|   *   |\n";
+                    dado += "|   *   |\n";
+                    dado += "|-------|\n";
+                    break
+                case 4:
+                    dado =  "|-------|\n";
+                    dado += "| *   * |\n";
+                    dado += "|       |\n";
+                    dado += "| *   * |\n";
+                    dado += "|-------|\n";
+                    break;
+                case 5:
+                    dado =  "|-------|\n";
+                    dado += "| *   * |\n";
+                    dado += "|   *   |\n";
+                    dado += "| *   * |\n";
+                    dado += "|-------|\n";
+                    break;
+                case 6:
+                    dado =  "|-------|\n";
+                    dado += "| *   * |\n";
+                    dado += "| *   * |\n";
+                    dado += "| *   * |\n";
+                    dado += "|-------|\n";
+                    break;
+                default: dado = "ERROR !"
+            } //end switch
+            document.getElementById("resultado").innerHTML = dado;
+
+
+        };
+    </script>
+</body>
+
+</html>

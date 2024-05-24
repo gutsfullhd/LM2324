@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varias temperaturas</title>
+</head>
+<body>
+    <h1>El Tiempo</h1>
+    <p id="resultado"></p>
+    <p id="mfrio"></p>
+    <p id="frio"></p>
+    <p id="calor"></p>
+    <p id="mcalor"></p>
+    <button onclick="temperatura()">Dale para ver la previsión de la temperatura</button>
+    <script>
+        function temperatura(){
+            //Varias temperaturas 
+            //Demuestra la estructura de if y else
+            var temp = 0;
+            document.getElementById("mfrio").innerHTML = "";
+            document.getElementById("frio").innerHTML = "";
+            document.getElementById("calor").innerHTML = "";
+            document.getElementById("mcalor").innerHTML = "";
+            temp = Math.floor(Math.random()*40)+1;
+            document.getElementById("resultado").innerHTML = "Hace "+ temp + " grados a fuera. ";
+            if(temp < 21){
+                if(temp < 10){
+                    document.getElementById("mfrio").innerHTML = "Coje una chaqueta";   
+                }
+                else{
+                    document.getElementById("frio").innerHTML = "Coje un jersey";
+                }//end if 10
+                
+                
+            }
+            else{
+                if(temp > 30){
+                    document.getElementById("calor").innerHTML = "Coje una camiseta";
+                }
+                else{
+                    document.getElementById("mcalor").innerHTML = "Coje una camisa";
+                }//end if 30
+                
+            }//end if 21
+        };
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+</head>
+<body>
+    <h1>Examen</h1>
+    <p>Pregunta 1:¿Qué significa NaN en Javascript?</p>
+    
+    <input type="text" id="pregunta1">
+    <p id="resultado"></p>
+    <p id="resultado1"></p>
+    <p id="total"></p>
+<button onclick="comprobar()">Comprueba</button>
+<script>
+    function comprobar(){
+        var respuesta1 = "Not a Number";
+        var aciertos = "";
+        var fallos = "";
+      
+        if (respuesta1 === respuesta1){
+            document.getElementById("resultado").innerHTML = "Correcto es " + respuesta1 ;
+            aciertos += 1;
+        }
+         if(respuesta1 !== respuesta1) {
+            document.getElementById("resultado1").innerHTML = "Incorrecto la respuesta es " + respuesta1 ;
+            fallo +=  1;
+        }
+        document.getElementById("total").innerHTML = "Has tenido "+ aciertos.length + " aciertos "+ " y " + fallos.length  + " fallos ";
+    }
+</script>
+</body>
+</html>
