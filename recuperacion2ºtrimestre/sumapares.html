@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sumar Números Pares</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .input-numbers {
+            width: 300px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .btn-sumar {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="numeros" class="input-numbers" placeholder="Escribe números separados por comas">
+        <button onclick="sumarPares()" class="btn-sumar">Sumar Pares</button>
+        <p id="resultado" class="resultado"></p>
+    </div>
+    <script>
+        function sumarPares() {
+            let input = document.getElementById("numeros").value;
+            let numeros = input.split(',').map(Number); // Convertir a array de números
+            let suma = 0;
+
+            for (let i = 0; i < numeros.length; i++) {
+                if (numeros[i] % 2 === 0) {
+                    suma += numeros[i];
+                }
+            }
+
+            document.getElementById("resultado").innerText = "La suma de los números pares es: " + suma;
+        }
+    </script>
+</body>
+</html>

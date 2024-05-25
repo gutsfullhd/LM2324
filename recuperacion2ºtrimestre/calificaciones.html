@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calificaciones del Alumno</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .input-field {
+            width: 100px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .mensaje {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: red;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="calificacion" class="input-field" placeholder="Calificación">
+        <button onclick="anadirCalificacion()" class="btn">Añadir Calificación</button>
+        <button onclick="calcularMedia()" class="btn">Calcular Media</button>
+        <button onclick="borrarCalificaciones()" class="btn">Borrar Calificaciones</button>
+        <p id="mensaje" class="mensaje"></p>
+        <p id="resultado" class="resultado"></p>
+    </div>
+    <script>
+        let calificaciones = [];
+
+        function anadirCalificacion() {
+            let calificacion = parseFloat(document.getElementById("calificacion").value);
+            let mensaje = document.getElementById("mensaje");
+            let resultado = document.getElementById("resultado");
+
+            // Limpiar mensajes anteriores
+            mensaje.innerText = "";
+            resultado.innerText = "";
+
+            if (isNaN(calificacion) || calificacion < 0 || calificacion > 10) {
+                mensaje.innerText = "Por favor, introduzca una calificación válida (entre 0 y 10).";
+            } else {
+                calificaciones.push(calificacion);
+                document.getElementById("calificacion").value = "";
+            }
+        }
+
+        function calcularMedia() {
+            let resultado = document.getElementById("resultado");
+            resultado.innerText = "";
+
+            if (calificaciones.length === 0) {
+                resultado.innerText = "No hay calificaciones para calcular la media.";
+                return;
+            }
+
+            let suma = 0;
+            for (let i = 0; i < calificaciones.length; i++) {
+                suma += calificaciones[i];
+            }
+            let media = suma / calificaciones.length;
+            resultado.innerText = "La nota media es: " + media.toFixed(2);
+        }
+
+        function borrarCalificaciones() {
+            calificaciones = [];
+            document.getElementById("mensaje").innerText = "";
+            document.getElementById("resultado").innerText = "";
+        }
+    </script>
+</body>
+</html>
+

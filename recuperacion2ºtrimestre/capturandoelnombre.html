@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturando el nombre</title>
+
+</head>
+<body>
+    <script>
+        function capturandonombre(){
+            var nombreusuario = document.miForm.txtNombre.value;
+            var saludo = "Hola, qué tal, ";
+            saludo += nombreusuario;
+            // += sirve para asignar y sumar un valor a la variable
+            saludo += "!!";
+            document.miForm.txtSaludo.value = saludo;
+        }//end function capturandonombre
+    </script>
+    <h1>Capturando Nombre<br /></h1>
+    <form name="miForm" id="miForm" action="">
+        <table border="1">
+            <tr>
+                    <td>Por favor introduzca su nombre:</td>
+                    <td><input type="text" name="txtNombre" id="txtNombre" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><center>
+                    <input type="button"
+                    value="Haga click aquí" onclick="capturandonombre()"
+                </center></td>
+            </tr>
+            <tr>
+                <td colspan="2"><center>
+                    <input type="text" name="txtSaludo" id="txtSaludo" />
+                </center></td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+</html>

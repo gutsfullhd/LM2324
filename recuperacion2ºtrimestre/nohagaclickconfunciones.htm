@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No haga click </title>
+</head>
+<body>
+    <h1>No haga click html</h1>
+    <form name="miForm" id="miForm" action="">
+        <input type="button"
+        value="No haga click en este boton"
+        onclick='protestar();'>
+        <script>
+            function protestar(){
+                document.bgColor = "red";
+                alert("Pero no te he dicho que no le des click!!!");
+                document.bgColor = "white";
+            }//end function
+
+        </script>
+    </form>
+</body>
+</html>
