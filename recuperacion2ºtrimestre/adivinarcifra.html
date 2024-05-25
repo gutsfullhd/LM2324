@@ -6,6 +6,37 @@
     <title>Adivina la cifra</title>
 </head>
 <body>
-    
+    <h1>Adivina la cifra</h1>
+<script>
+    //Adivinar números
+    var intento = 50;
+var objetivo = 0;
+var turnos = 0;
+var mensaje = "";
+objetivo = Math.floor(Math.random() * 100) + 1;
+//alert(objetivo);
+mensaje = "Estoy pensando un número entre 1 y 100. \n";
+mensaje += "Intente adivinarlo, y le diré si su intento es demasiado alto, \n";
+mensaje += "demasiado bajo, o correcto. Intente hacerlo con el menor número de intentos.";
+alert (mensaje);
+intento = eval(prompt("Cuál es su intento?", intento));
+while (intento != objetivo){
+turnos++;
+
+if (intento > objetivo){
+intento = eval(prompt (turnos + ". Demasiado alto!! Siguiente intento?", intento));
+} //end if
+if (intento < objetivo){
+    intento = prompt (turnos + ". Demasiado bajo!! Siguiente intento?", intento);
+}//end if
+if(intento == objetivo){
+    mensaje = "LO ACERTASTE!!! \n";
+    mensaje += "En "+turnos+ " intentos!"
+    alert(mensaje);
+}//end if 
+}//end while
+</script>
+
+ 
 </body>
 </html>
