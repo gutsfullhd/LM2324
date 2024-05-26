@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Adivinar el Número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Adivinar el Número</h1>
+    <p>Adivina el número entre 1 y 100.</p>
+    <input type="number" id="guessInput" min="1" max="100" required>
+    <button id="guessButton">Adivinar</button>
+    <p id="message"></p>
+    <p id="attempts"></p>
+    <p id="record"></p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const guessInput = document.getElementById('guessInput');
+            const guessButton = document.getElementById('guessButton');
+            const message = document.getElementById('message');
+            const attemptsDisplay = document.getElementById('attempts');
+            const recordDisplay = document.getElementById('record');
+            
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            let attempts = 0;
+
+            // Cargar récord del localStorage
+            const record = localStorage.getItem('record');
+            if (record !== null) {
+                recordDisplay.textContent = `Récord de intentos: ${record}`;
+            } else {
+                recordDisplay.textContent = 'No hay récord actual.';
+            }
+
+            guessButton.addEventListener('click', () => {
+                const guess = parseInt(guessInput.value);
+                attempts++;
+                attemptsDisplay.textContent = `Intentos: ${attempts}`;
+
+                if (isNaN(guess) || guess < 1 || guess > 100) {
+                    showMessage('Por favor, introduce un número entre 1 y 100.', 'error');
+                    return;
+                }
+
+                if (guess < randomNumber) {
+                    showMessage('Demasiado bajo.', 'error');
+                } else if (guess > randomNumber) {
+                    showMessage('Demasiado alto.', 'error');
+                } else {
+                    showMessage(`¡Correcto! Adivinaste el número en ${attempts} intentos.`, 'success');
+
+                    // Actualizar récord si es necesario
+                    if (record === null || attempts < record) {
+                        localStorage.setItem('record', attempts);
+                        recordDisplay.textContent = `Récord de intentos: ${attempts}`;
+                    }
+
+                    // Reiniciar juego
+                    resetGame();
+                }
+            });
+
+            function showMessage(text, type) {
+                message.textContent = text;
+                message.className = type;
+            }
+
+            function resetGame() {
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+                attempts = 0;
+                attemptsDisplay.textContent = `Intentos: ${attempts}`;
+                guessInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
