@@ -3,6 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const limpiarBtn = document.getElementById('limpiarBtn');
     const carrito = document.getElementById('carrito');
     const datos = document.getElementById('datos');
+    const fentradaInput = document.getElementById('fentrada');
+    const fsalidaInput = document.getElementById('fsalida');
+  
+    // Establecer la fecha mínima para la fecha de entrada
+    const today = new Date().toISOString().split('T')[0];
+    fentradaInput.setAttribute('min', today);
   
     // Cargar reservas guardadas en localStorage al iniciar
     if (localStorage.getItem('reservas')) {
@@ -14,6 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   
+    fentradaInput.addEventListener('change', function () {
+      // Establecer la fecha mínima de salida según la fecha de entrada seleccionada
+      fsalidaInput.setAttribute('min', fentradaInput.value);
+    });
+  
     seleccionarBtn.addEventListener('click', function () {
       const fentrada = document.getElementById('fentrada').value;
       const fsalida = document.getElementById('fsalida').value;
@@ -23,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
   
       if (fentrada === '' || fsalida === '') {
         alert('Por favor, selecciona las fechas de entrada y salida.');
+        return;
+      }
+  
+      if (new Date(fsalida) <= new Date(fentrada)) {
+        alert('La fecha de salida debe ser posterior a la fecha de entrada.');
         return;
       }
   
@@ -63,5 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
       localStorage.removeItem('reservas');
     });
   });
+  
   
   
