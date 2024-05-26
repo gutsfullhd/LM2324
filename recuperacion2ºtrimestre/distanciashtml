@@ -1,65 +1,31 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="es">
 
-<HEAD>
-	<meta charset="utf-8">
-	<TITLE>Checkboxes</TITLE>
-</HEAD>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular distancia</title>
+</head>
 
-<BODY BGCOLOR="#FFFFFF">
-	<h2>Casillas</h2>
-	<font size=2>
-		<b>
-			¡El objetivo es marcar el máximo número posible de casillas en 20 segundos!</b>
-		<hr>
-		<SCRIPT>
-			var total = 0;
-			var jugar = false;
-
-			function mostrar(element) {
-				var now = new Date()
-				if (!jugar) { // Si no había comenzado el juego		
-					jugar = true;
-					startTime = now.getTime();
-				}
-
-				if (now.getTime() - startTime > 20000) {
-					element.checked = !element.checked; // Cambiamos el estado de la casilla a su "contrario"	
-					return;
-				}
-
-				if (element.checked)
-					total++ // El usuario ha marcado el checkbox, lo cuento
-				else
-					total--;
-				element.form.num.value = element.checked;
-			}
-
-			function restart(form) {
-				total = 0;
-				jugar = false;
-				for (var i = 0; i <= 100; i++)
-				{		// Inicializamos todas las casillas
-					form.elements[i].checked = false;
-				}
-			}
-
-		</SCRIPT>
-
-		<SCRIPT>
-
-			document.write("<FORM><CENTER>");
-			document.write('<INPUT TYPE="text" VALUE="0" NAME="num" SIZE=10 onFocus="this.blur()"><BR>');
-			document.write("<HR SIZE=1 WIDTH=40%>");
-			for (var i = 0; i < 10; ++i) {
-				for (var j = 0; j < 10; ++j) {
-					document.write('<INPUT TYPE="checkbox" onClick="mostrar(this)">');
-				}
-				document.write("<BR>");
-			}
-			document.write("<HR SIZE=1 WIDTH=40%>");
-			document.write('<INPUT TYPE="button" VALUE="Reiniciar!" onClick="restart(this.form)">');
-			document.write("</CENTER></FORM>");
-		</SCRIPT>
+<body>
+    <h1>Calculadora de distancia de viajes</h1>
+    <input type="text" id="caja" onkeypress="return event.charCode != 32" placeholder="Introduzca distancias"> <button onclick="calcular()">Calcula</button>
+    <script>
+        function calcular() {
+            var valorCaja = document.getElementById('caja').value;
+            var arraydecadena = valorCaja.split(',');
+            var suma = 0;
+            for (var i = 0; i < arraydecadena.length; i++) {
+                suma += parseFloat(arraydecadena[i]);
+            }
+            if (isNaN(suma)) {
+                alert('Introduzca solo números separados por comas');
+            }
+            else {
+                alert('La distancia total del viaje es de ' + suma + ' Km');
+            }
+        }
+    </script>
 </body>
 
 </html>
