@@ -4,6 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const carrito = document.getElementById('carrito');
     const datos = document.getElementById('datos');
   
+    // Cargar reservas guardadas en localStorage al iniciar
+    if (localStorage.getItem('reservas')) {
+      const reservasGuardadas = JSON.parse(localStorage.getItem('reservas'));
+      reservasGuardadas.forEach(reserva => {
+        const reservaItem = document.createElement('li');
+        reservaItem.textContent = `Entrada: ${reserva.fentrada}, Salida: ${reserva.fsalida}, Adultos: ${reserva.adultos}, Niños: ${reserva.niños}, Habitación: ${reserva.tipohabitacion}`;
+        carrito.appendChild(reservaItem);
+      });
+    }
+  
     seleccionarBtn.addEventListener('click', function () {
       const fentrada = document.getElementById('fentrada').value;
       const fsalida = document.getElementById('fsalida').value;
@@ -24,9 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
         tipohabitacion
       };
   
+      // Añadir la reserva al carrito visual
       const reservaItem = document.createElement('li');
       reservaItem.textContent = `Entrada: ${reserva.fentrada}, Salida: ${reserva.fsalida}, Adultos: ${reserva.adultos}, Niños: ${reserva.niños}, Habitación: ${reserva.tipohabitacion}`;
       carrito.appendChild(reservaItem);
+  
+      // Guardar reserva en localStorage
+      let reservas = [];
+      if (localStorage.getItem('reservas')) {
+        reservas = JSON.parse(localStorage.getItem('reservas'));
+      }
+      reservas.push(reserva);
+      localStorage.setItem('reservas', JSON.stringify(reservas));
   
       datos.textContent = `Fecha de entrada: ${reserva.fentrada}, Fecha de salida: ${reserva.fsalida}, Adultos: ${reserva.adultos}, Niños: ${reserva.niños}, Tipo de habitación: ${reserva.tipohabitacion}`;
     });
@@ -39,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('tipohabitacion').value = 'Individual';
       carrito.innerHTML = '';
       datos.textContent = '';
+  
+      // Limpiar localStorage
+      localStorage.removeItem('reservas');
     });
   });
+  
   
