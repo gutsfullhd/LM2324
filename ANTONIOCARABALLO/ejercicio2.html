@@ -34,14 +34,15 @@
     $(document).ready(function(){
         let apikey= "b82c6546018db203414656b8faf580c0"
         let url= "http://api.openweathermap.org/data/2.5/air_pollution?";
-        let latitud=0;
-        let longitud=0;
+        let latitud="";
+        let longitud="";
+        let ubicacion= latitud + longitud
         let urlcompleta= url + "lat=" + latitud + "&lon=" + longitud + "&appid=" + apikey;
-
+        
         $.get(url_completa).done(function(datos){
             let components = datos.list[0].components; 
             console.log(components);
-            $("#resultados").text("La contaminación en " + datos + " es: CO: " + components.co + ", NO: " + components.no + ", NO2: " + components.no2 + ", O3: " + components.o3 + ", SO2: " + components.so2 + ", PM2.5: " + components.pm2_5 + ", PM10: " + components.pm10 + ", NH3: " + components.nh3);
+            $("#resultados").text("La contaminación en " + ubicaion + " es: CO: " + components.co + ", SO2: "+" µ/m3 " + components.so2 + ", NO2: " + " µ/m3 "  +  components.so2 + ", PM2.5: " + " µ/m3 "  + components.pm2_5  );
           }).fail(function(){
             $("#resultados").text("Ha ocurrido un error en la llamada del servidor");
           });
