@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+div#examen
+{
+    border:#000 1px solid;
+    padding:10px 40px 40px 40px;
+
+}
+</style>
+<script>
+/* Sustituye los ******** por lo que corresponda */
+var pos = 0, test, examen, pregunta, opcion, opciones, chA, chB, chC, correctas = 0;
+var preguntas = [
+    [ "¿Cuánto es 10 + 4?", "12", "14", "16", "B" ],
+	[ "¿Cuánto es 20 - 9?", "7", "13", "11", "C" ],
+	[ "¿Cuánto es 7 x 3?", "21", "24", "25", "A" ],
+	[ "¿Cuánto es 8 / 2?", "10", "2", "4", "C" ]
+];
+
+function hacerPregunta(){
+	test = document.getElementById('examen'); /* Obtengo el div del examen */
+	if(pos > preguntas.length-1){ /* ¿Cuando hemos llegado al final del cuestionario? La variable pos la comparo con algo */
+		test.innerHTML = "<h2>Conseguiste acertar "+ correctas +" de "+ preguntas.length +" preguntas</h2>"; /* En correctas llevamos el contador de acertadas */
+		document.getElementById('estado').innerHTML = "Prueba completada"; /* En el estado decimos que hemos completado el cuestionario */
+		pos = 0;
+		correctas = 0;
+		return false;
+	}
+	document.getElementById("estado").innerHTML = "Pregunta "+(pos+1)+" de "+preguntas.length; /* Mostramos el progreso en el cuestionario */
+	pregunta = preguntas[pos][0]; /* Introducimos en la variable global pregunta la pregunta */
+	chA = preguntas[pos][1];
+	chB = preguntas[pos][2];
+	chC = preguntas[pos][3];
+	test.innerHTML = "<h3>"+pregunta+"</h3>";
+	test.innerHTML += "<input type='radio' name='opciones' value='A'> "+chA+"<br>";
+	test.innerHTML += "<input type='radio' name='opciones' value='B'> "+chB+"<br>";
+	test.innerHTML += "<input type='radio' name='opciones' value='C'> "+chC+"<br><br>";
+	test.innerHTML += "<button onclick='comprobarRespuesta()'>Enviar Respuesta</button>"; /* Aquí deberíamos poner un botón que cuando se pulse se compruebe la respuesta */
+}
+function comprobarRespuesta(){
+	opciones = document.getElementsByName("opciones");
+	for(var i=0; i<opciones.length; i++){
+		if(opciones[i].checked) /* Comprobamos cual está marcado por el usuario */
+        {
+			opcion = opciones[i].value;
+		}
+	}
+	if(opcion == preguntas[pos][4]) /* Si la opción marcada es la correcta según el array de arrays preguntas entonces ... */
+    {
+		correctas+=1; /* Contamos que ha acertado */
+	}
+	opcion = ""
+	pos++;
+	return hacerPregunta(); /* Hacemos pregunta */
+}
+window.addEventListener("load", hacerPregunta, false);
+</script>
+</head>
+<body>
+<h1>Calculadora humana</h1>
+<h2 id="estado"></h2>
+<div id="examen"></div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Captcha</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function getRandomInt(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            function generateOperation() {
+                const num2 = getRandomInt(1, 10);
+                const num1 = getRandomInt(num2 + 1, num2 + 10); // num1 siempre será mayor que num2, pero no mucho más
+                
+                const operations = ['+', '-', '*', '^'];
+                const operation = operations[Math.floor(Math.random() * operations.length)];
+                
+                let result;
+                let displayOperation;
+                
+                switch(operation) {
+                    case '+':
+                        result = num1 + num2;
+                        displayOperation = `${num1} + ${num2}`;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        displayOperation = `${num1} - ${num2}`;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        displayOperation = `${num1} * ${num2}`;
+                        break;
+                    case '^':
+                        result = Math.pow(num1, num2);
+                        displayOperation = `${num1} ^ ${num2}`;
+                        break;
+                }
+
+                return { displayOperation, result };
+            }
+
+            function setNewCaptcha() {
+                const { displayOperation, result } = generateOperation();
+                document.getElementById('operation').textContent = displayOperation;
+                document.getElementById('correctResult').value = result;
+                document.getElementById('userInput').value = '';
+            }
+
+            document.getElementById('captchaForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const userInput = parseFloat(document.getElementById('userInput').value);
+                const correctResult = parseFloat(document.getElementById('correctResult').value);
+
+                if (isNaN(userInput)) {
+                    alert("Por favor, rellene el input.");
+                } else if (userInput !== correctResult) {
+                    alert("El resultado no es correcto, por favor intentelo de nuevo.");
+                    setNewCaptcha();
+                } else {
+                    setNewCaptcha();
+                }
+            });
+
+            setNewCaptcha();
+        });
+    </script>
+</head>
+<body>
+    <h1>Desafío Captcha</h1>
+    <form id="captchaForm">
+        <p>Resuelve la siguiente operación: <span id="operation"></span></p>
+        <input type="number" id="userInput" required>
+        <button type="submit">Comprobar</button>
+        <input type="hidden" id="correctResult">
+    </form>
+</body>
+</html>
+

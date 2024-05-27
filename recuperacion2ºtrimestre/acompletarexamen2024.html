@@ -1,0 +1,65 @@
+<HTML>
+
+    <HEAD>
+        <meta charset="utf-8">
+        <TITLE>Checkboxes</TITLE>
+    </HEAD>
+    
+    <BODY BGCOLOR="#FFFFFF">
+        <h2>Casillas</h2>
+        <font size=2>
+            <b>
+                ¡El objetivo es marcar el máximo número posible de casillas en 20 segundos!</b>
+            <hr>
+            <SCRIPT>
+                var total = 0;
+                var jugar = false;
+    
+                function mostrar(element) {
+                    var now = new Date()
+                    if (!jugar) { // Si no había comenzado el juego		
+                        jugar = true;
+                        startTime = now.getTime();
+                    }
+    
+                    if (now.getTime() - startTime > 20000) {
+                        element.checked = !element.checked; // Cambiamos el estado de la casilla a su "contrario"	
+                        return;
+                    }
+    
+                    if (element.checked)
+                        total++ // El usuario ha marcado el checkbox, lo cuento
+                    else
+                        total--;
+                    element.form.num.value = element.checked;
+                }
+    
+                function restart(form) {
+                    total = 0;
+                    jugar = false;
+                    for (var i = 0; i <= 100; i++)
+                    {		// Inicializamos todas las casillas
+                        form.elements[i].checked = false;
+                    }
+                }
+    
+            </SCRIPT>
+    
+            <SCRIPT>
+    
+                document.write("<FORM><CENTER>");
+                document.write('<INPUT TYPE="text" VALUE="0" NAME="num" SIZE=10 onFocus="this.blur()"><BR>');
+                document.write("<HR SIZE=1 WIDTH=40%>");
+                for (var i = 0; i < 10; ++i) {
+                    for (var j = 0; j < 10; ++j) {
+                        document.write('<INPUT TYPE="checkbox" onClick="mostrar(this)">');
+                    }
+                    document.write("<BR>");
+                }
+                document.write("<HR SIZE=1 WIDTH=40%>");
+                document.write('<INPUT TYPE="button" VALUE="Reiniciar!" onClick="restart(this.form)">');
+                document.write("</CENTER></FORM>");
+            </SCRIPT>
+    </body>
+    
+    </html>

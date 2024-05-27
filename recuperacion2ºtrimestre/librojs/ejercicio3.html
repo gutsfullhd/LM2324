@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora </title>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <p id="suma"></p>
+    <p id="resta"></p>
+    <p id="multiplicar"></p>
+    <p id="division"></p>
+<script>
+    var cifra1;
+    var cifra2;
+    cifra1 = prompt("Ingrese la primera cifra?");
+    cifra1 = eval(cifra1);
+    cifra2 = prompt ("Ingrese la segunda cifra");
+    cifra2= eval(cifra2);
+    var suma = cifra1 + cifra2;
+    var resta = cifra1 - cifra2;
+    var multiplicacion = cifra1 * cifra2;
+    var division = cifra1 / cifra2;
+    document.getElementById("suma").innerHTML ="El resultado de la suma es: " + suma;
+    document.getElementById("resta").innerHTML ="El resultado de la resta es: " + resta;
+    document.getElementById("multiplicar").innerHTML ="El resultado de la multiplicacion es: " + multiplicacion;
+    document.getElementById("division").innerHTML ="El resultado de la división es: " + division;
+</script>    
+</body>
+</html>

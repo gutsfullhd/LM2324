@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acertijo</title>
+</head>
+<body>
+    <script>
+    var solucion = "para llegar al otro lado";
+    var intento = "";
+    var respuesta;
+    
+    while (intento !== solucion) {
+        respuesta = prompt("¿Por qué cruzó el pavo la carretera?", "");
+        intento = respuesta;
+    }
+    
+    if (intento === solucion) {
+        alert("Muy gracioso, ¿verdad?");
+    } else {
+        alert("No, no es eso...");
+    }
+</script>
+        <h1>El acertijo <br /></h1>
+</body>
+</html>

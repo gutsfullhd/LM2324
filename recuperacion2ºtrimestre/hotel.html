@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="hotel.css">
+  <script src="hotel.js" defer></script>
+  <title>Gestión de Reserva</title>
+</head>
+<body>
+  <h2>Gestión de reserva</h2>
+  <div class="cajas">
+    <div class="card">
+      <img src="nacional.jpg" alt="nacional" style="width:100%">
+      <div class="container">
+        <h4><b>Hotel Nacional de La Habana</b></h4>
+        <p>
+          Con una ubicación excepcional en el mismo centro de la ciudad de La Habana, frente a las aguas cálidas del Golfo de México y de la entrada a la bahía de la capital; con una rica y sorprendente historia, donde se mezclan: acontecimientos importantes; la vigencia de nuestra historia y cultura nacional, han hecho que desde su inauguración en 1930 haya acogido a innumerables personalidades de la historia universal, la cultura, la ciencia, el deporte y la política.
+        </p>
+        <label for="fentrada">Fecha de entrada:</label>
+        <input type="date" name="fentrada" id="fentrada"><br>
+        <label for="fsalida">Fecha de salida:</label>
+        <input type="date" name="fsalida" id="fsalida"><br>
+        <div class="botonera">
+          <label for="adultos">Adultos:</label>
+          <select name="adultos" id="adultos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label for="niños">Niños:</label>
+          <select name="niños" id="niños">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+          <label for="tipohabitacion">Tipo de habitación:</label>
+          <select name="tipohabitacion" id="tipohabitacion">
+            <option value="Individual">Individual</option>
+            <option value="Doble">Doble</option>
+            <option value="Triple">Triple</option>
+            <option value="Suite">Suite</option>
+          </select>
+        </div>
+        <div class="botonera2">
+          <button id="seleccionarBtn">Seleccionar</button>
+          <button id="limpiarBtn">Limpiar selección</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <ul id="carrito">
+      </ul>
+    </div>
+    <div class="centrada">
+      <p id="datos"></p>
+    </div>
+  </div>
+</body>
+</html>

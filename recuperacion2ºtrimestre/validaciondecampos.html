@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verificar Campos Obligatorios</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        .input-field {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .btn-verificar {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .mensaje {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="campo1" class="input-field" placeholder="Campo 1 (Obligatorio)">
+        <input type="text" id="campo2" class="input-field" placeholder="Campo 2 (Obligatorio)">
+        <input type="text" id="campo3" class="input-field" placeholder="Campo 3 (Opcional)">
+        <button onclick="verificarCampos()" class="btn-verificar">Verificar Campos</button>
+        <p id="mensaje" class="mensaje"></p>
+    </div>
+    <script>
+        function verificarCampos() {
+            // Selecciona los campos obligatorios
+            let camposObligatorios = [
+                document.getElementById('campo1'),
+                document.getElementById('campo2')
+            ];
+
+            // Verifica si alguno de los campos obligatorios está vacío
+            if (estanCompletados(camposObligatorios)) {
+                document.getElementById('mensaje').innerText = "Todos los campos obligatorios están completados.";
+            } else {
+                document.getElementById('mensaje').innerText = "Por favor, complete todos los campos obligatorios.";
+            }
+        }
+
+        function estanCompletados(campos) {
+            for (let i = 0; i < campos.length; i++) {
+                if (campos[i].value.trim() === '') {
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

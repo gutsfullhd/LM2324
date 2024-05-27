@@ -1,0 +1,57 @@
+body {
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.cajas {
+    display:flex;
+    justify-content: center;
+    background-color: whitesmoke;
+  }
+  .botonera {
+    display:flex;
+    justify-content:flex-start;
+  }
+  .botonera2 {
+    display:flex;
+    justify-content:space-around;
+  }
+  .card {
+    box-shadow: 0 5px 20px 0 rgba(0,0,0,0.5);
+    border: 1px solid black;
+    transition: 0.3s;
+    width: 60%;
+    color: black;
+    background-color: whitesmoke;
+  }
+  .card:hover {
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.5);
+  }
+  .container {
+    padding: 10px 10px;
+    background-color: whitesmoke;
+  }
+  .centrada{
+    display: flex;
+    justify-content:flex-start;
+    font-weight: bold;
+  }
+  input {
+      text-align:center;
+      width:20%;
+  }
+  select {
+    margin: 0px 30px;
+    font-size: 130%;
+    width: 150px;
+  }
+  input[type="date"] {
+    font-size:130%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:200px;
+ }
+ button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 130%;
+ }
