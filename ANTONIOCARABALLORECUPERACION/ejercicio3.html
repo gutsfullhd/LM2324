@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+            .error {
+        color: black;
+    }
+    </style>
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <form id="registration" onsubmit="validarformulario()">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="ejemplo@iesamachado.org" required><br><br>
+
+    <label for="dni">DNI:</label>
+    <input type="text" id="dni" name="dni"><br><br>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="confirmPassword">Confirmar Contraseña:</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+    <input type="checkbox" id="aceptarpoliticas" name="aceptarpoliticas">
+    <label for="aceptarpoliticas">Acepto politicas de privacidad</label><br><br>
+
+    <button type="submit">Registrar</button>
+    <p id="errorEmail" class="error"></p>
+    <p id="errorDni" class="error"></p>
+    <p id="errorPassword" class="error"></p>
+    <p id="errorPasswordRepeat" class="error"></p>
+    <p id="erroraceptarpoliticas" class="error"></p>
+
+</form>
+<script>
+function validarformulario(){
+    var email = document.getElementById("email").value.trim();
+    var dni = document.getElementById("dni").value.trim();
+    var password = document.getElementById("password").value.trim();
+    var passwordRepeat = document.getElementById("passwordRepeat").value.trim()
+    var aceptarpoliticas = document.getElementById("aceptarpoliticas").checked;
+    
+    var errorMessages = document.getElementsByClassName("error");
+    for (var i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].innerHTML = "";
+    }
+
+    if (email === "") {
+        document.getElementById("errorEmail").innerHTML = "Debes rellenar este campo";
+    } else if (!isValidEmail(email)) {
+        document.getElementById("errorEmail").innerHTML = "Correo electrónico no válido";
+    }
+    if (dni === "") {
+        document.getElementById("errorDni").innerHTML = "Debes rellenar este campo";
+    } else if (!isValidDni(dni)) {
+        document.getElementById("errorDni").innerHTML = "DNI no válido";
+    }
+    if (password === "") {
+        document.getElementById("errorPassword").innerHTML = "Debes rellenar este campo";
+    }
+    if (passwordRepeat === "") {
+        document.getElementById("errorPasswordRepeat").innerHTML = "Debes rellenar este campo";
+    } else if (password !== passwordRepeat) {
+        document.getElementById("errorPasswordRepeat").innerHTML = "La contraseña no coincide";
+    }
+    if (!aceptarCondiciones) {
+        document.getElementById("erroraceptarpoliticas").innerHTML = "Debes aceptar las condiciones de uso";
+    }
+    return !document.querySelectorAll('.error').length;
+
+
+function validatePassword(password) {
+                var re = isNaN(password.value > 12);
+                return re.test(password);
+            }
+function isValidEmail(email) {
+ var correo 
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$+@iesamachado.org/;
+return emailRegex.test(email);
+}
+function isValidDni(dni) {
+
+    var dniRegex = /^[0-9A-Z]{8}$/;
+    return dniRegex.test(dni);
+}
+}
+</script>
+
+</body>
+</html>
